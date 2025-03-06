@@ -33,7 +33,7 @@ export class DashboardComponent {
       this.filter.asObservable()
     ])
       .pipe(
-        map(([data, filterValue]) => data.filter((entry) => `${entry.department}${entry.name}`.includes(filterValue))),
+        map(([data, filterValue]) => data.filter((entry) => `${entry.department}${entry.name}`.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase()))),
       )
 
   }
