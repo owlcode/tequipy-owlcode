@@ -1,0 +1,52 @@
+<div class="employee-details">
+  <div class="breadcrumb">
+    <button mat-button (click)="onBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Employees
+    </button>
+  </div>
+
+  <ng-container *ngIf="employee$ | async as employee">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <div class="header-content">
+            <h1>{{ employee.name }}</h1>
+            <button mat-raised-button color="warn" (click)="onOffboard()">
+              <mat-icon>person_remove</mat-icon>
+              Offboard
+            </button>
+          </div>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="employee-info">
+          <h2>Employee Information</h2>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListItemIcon>business</mat-icon>
+              <div matListItemTitle>Department</div>
+              <div matListItemLine>{{ employee.department }}</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListItemIcon>email</mat-icon>
+              <div matListItemTitle>Email</div>
+              <div matListItemLine>{{ employee.email }}</div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+        <h2>Equipment</h2>
+        <mat-list>
+          <mat-list-item *ngFor="let equipment of employee.equipments">
+            <mat-icon matListItemIcon>computer</mat-icon>
+            <div matListItemTitle>{{ equipment.name }}</div>
+            <div matListItemLine>ID: {{ equipment.id }}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
+

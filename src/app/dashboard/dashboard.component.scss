@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    padding: 24px;
+}
+
+tr.mat-mdc-row:hover {
+    background: #efefef;
+    cursor: pointer;
+}

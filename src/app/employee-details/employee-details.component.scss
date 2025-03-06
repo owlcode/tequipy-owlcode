@@ -1,0 +1,31 @@
+.employee-details {
+  padding: 24px;
+
+  .breadcrumb {
+    margin-bottom: 24px;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  mat-card {
+    max-width: 800px;
+  }
+
+  h2 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.mat-mdc-card-header-text {
+  width: 100%;
+}
